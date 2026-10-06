@@ -1,171 +1,421 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presentasi Saya</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
+<title>Supply Chain Management</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+/* SLIDE */
+.slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 70px 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide.active {
+    display: flex;
+    animation: muncul 0.5s ease;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111827;
-      color: white;
-      overflow: hidden;
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
+}
 
-    .slide {
-      width: 100vw;
-      height: 100vh;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 50px;
-    }
+.content {
+    max-width: 1000px;
+}
 
-    .slide.active {
-      display: flex;
-    }
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
 
-    .content {
-      max-width: 900px;
-    }
+h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
 
-    h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
+h3 {
+    font-size: 28px;
+}
 
-    h2 {
-      font-size: 45px;
-      margin-bottom: 25px;
-    }
+p {
+    font-size: 23px;
+    line-height: 1.7;
+}
 
-    p {
-      font-size: 24px;
-      line-height: 1.6;
-    }
+ul {
+    text-align: left;
+    font-size: 22px;
+    line-height: 2;
+}
 
-    button {
-      position: fixed;
-      bottom: 30px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 10px;
-      background: #2563eb;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-    }
+.highlight {
+    font-size: 25px;
+    margin-top: 25px;
+}
 
-    #prev {
-      left: 30px;
-    }
+/* KARTU */
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-    #next {
-      right: 30px;
-    }
+.card {
+    width: 260px;
+    padding: 25px;
+    border-radius: 18px;
+    background: #1e293b;
+    border: 1px solid #334155;
+}
 
-    #counter {
-      position: fixed;
-      bottom: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 18px;
-    }
-  </style>
+.card h3 {
+    margin-top: 0;
+}
+
+/* NAVIGASI */
+button {
+    position: fixed;
+    bottom: 30px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px;
+}
+
+#counter {
+    position: fixed;
+    bottom: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* GARIS ATAS */
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #2563eb;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- SLIDE 1 -->
-  <section class="slide active">
+<div class="top"></div>
+
+<!-- SLIDE 1 -->
+<section class="slide active">
     <div class="content">
-      <h1>Judul Presentasi</h1>
-      <p>Nama Kamu</p>
-      <p>Kelas / Mata Pelajaran</p>
-    </div>
-  </section>
+        <p>📦 MANAJEMEN OPERASIONAL</p>
 
-  <!-- SLIDE 2 -->
-  <section class="slide">
+        <h1>Supply Chain<br>Management</h1>
+
+        <p class="highlight">
+            Mengelola aliran barang, informasi, dan sumber daya
+            dari pemasok hingga konsumen.
+        </p>
+
+        <p>
+            Nama Mahasiswa<br>
+            Kelas / Program Studi
+        </p>
+    </div>
+</section>
+
+
+<!-- SLIDE 2 -->
+<section class="slide">
     <div class="content">
-      <h2>Latar Belakang</h2>
-      <p>
-        Tulis latar belakang materi presentasi kamu di sini.
-      </p>
-    </div>
-  </section>
 
-  <!-- SLIDE 3 -->
-  <section class="slide">
+        <h2>Apa Itu Supply Chain Management?</h2>
+
+        <p>
+            Supply Chain Management atau SCM adalah proses
+            mengelola seluruh aktivitas yang berkaitan dengan
+            aliran barang, jasa, informasi, dan keuangan
+            mulai dari pemasok hingga sampai kepada konsumen akhir.
+        </p>
+
+        <p class="highlight">
+            🎯 Tujuan utamanya adalah menciptakan proses yang
+            efektif, efisien, dan mampu memenuhi kebutuhan pelanggan.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- SLIDE 3 -->
+<section class="slide">
     <div class="content">
-      <h2>Pembahasan</h2>
-      <p>
-        Tulis isi atau materi utama presentasi kamu di sini.
-      </p>
-    </div>
-  </section>
 
-  <!-- SLIDE 4 -->
-  <section class="slide">
+        <h2>Komponen Supply Chain</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏭 Supplier</h3>
+                <p>
+                    Menyediakan bahan baku
+                    dan sumber daya.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏢 Produsen</h3>
+                <p>
+                    Mengolah bahan baku
+                    menjadi produk.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🚚 Distributor</h3>
+                <p>
+                    Menyalurkan produk
+                    menuju pasar.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🛒 Konsumen</h3>
+                <p>
+                    Pihak yang menggunakan
+                    produk atau jasa.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SLIDE 4 -->
+<section class="slide">
     <div class="content">
-      <h2>Kesimpulan</h2>
-      <p>
-        Tulis kesimpulan presentasi kamu di sini.
-      </p>
+
+        <h2>Proses Supply Chain</h2>
+
+        <p class="highlight">
+            Supplier → Produksi → Penyimpanan → Distribusi → Konsumen
+        </p>
+
+        <ul>
+            <li>Pengadaan bahan baku</li>
+            <li>Proses produksi</li>
+            <li>Penyimpanan dan pengelolaan persediaan</li>
+            <li>Distribusi produk</li>
+            <li>Produk diterima oleh konsumen</li>
+        </ul>
+
     </div>
-  </section>
+</section>
 
-  <button id="prev" onclick="prevSlide()">← Sebelumnya</button>
-  <button id="next" onclick="nextSlide()">Berikutnya →</button>
 
-  <div id="counter">1 / 4</div>
+<!-- SLIDE 5 -->
+<section class="slide">
+    <div class="content">
 
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    let current = 0;
+        <h2>Tujuan & Manfaat SCM</h2>
 
-    function showSlide(index) {
-      slides.forEach(slide => {
+        <div class="cards">
+
+            <div class="card">
+                <h3>💰 Efisiensi Biaya</h3>
+                <p>
+                    Mengurangi biaya operasional
+                    dan distribusi.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⏱️ Menghemat Waktu</h3>
+                <p>
+                    Mempercepat proses dari
+                    pemasok hingga pelanggan.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📦 Persediaan</h3>
+                <p>
+                    Menghindari kekurangan
+                    maupun kelebihan stok.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>😊 Kepuasan Pelanggan</h3>
+                <p>
+                    Memastikan produk tersedia
+                    pada waktu yang tepat.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SLIDE 6 -->
+<section class="slide">
+    <div class="content">
+
+        <h2>Contoh Penerapan SCM</h2>
+
+        <h3>Contoh: Perusahaan E-Commerce</h3>
+
+        <p>
+            Ketika pelanggan melakukan pemesanan secara online,
+            sistem akan mengelola proses mulai dari pengecekan
+            stok, pengemasan, pengiriman, hingga produk diterima
+            oleh pelanggan.
+        </p>
+
+        <p class="highlight">
+            🛍️ Pesanan → Gudang → Kurir → Pelanggan
+        </p>
+
+        <p>
+            Koordinasi yang baik membuat pengiriman lebih cepat
+            dan mengurangi kesalahan.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- SLIDE 7 -->
+<section class="slide">
+    <div class="content">
+
+        <h2>Kesimpulan</h2>
+
+        <p>
+            Supply Chain Management merupakan bagian penting
+            dalam kegiatan bisnis karena menghubungkan pemasok,
+            produsen, distributor, hingga konsumen.
+        </p>
+
+        <p>
+            Dengan SCM yang baik, perusahaan dapat meningkatkan
+            efisiensi, mengurangi biaya, mengoptimalkan persediaan,
+            dan meningkatkan kepuasan pelanggan.
+        </p>
+
+        <h3>Terima Kasih 🙏</h3>
+
+    </div>
+</section>
+
+
+<!-- TOMBOL -->
+<button id="prev" onclick="prevSlide()">← Sebelumnya</button>
+
+<button id="next" onclick="nextSlide()">Berikutnya →</button>
+
+<div id="counter">1 / 7</div>
+
+
+<script>
+
+const slides = document.querySelectorAll(".slide");
+
+let current = 0;
+
+function showSlide(index) {
+
+    slides.forEach(slide => {
         slide.classList.remove("active");
-      });
+    });
 
-      slides[index].classList.add("active");
+    slides[index].classList.add("active");
 
-      document.getElementById("counter").textContent =
+    document.getElementById("counter").textContent =
         (index + 1) + " / " + slides.length;
-    }
+}
 
-    function nextSlide() {
-      if (current < slides.length - 1) {
+function nextSlide() {
+
+    if (current < slides.length - 1) {
         current++;
         showSlide(current);
-      }
     }
 
-    function prevSlide() {
-      if (current > 0) {
+}
+
+function prevSlide() {
+
+    if (current > 0) {
         current--;
         showSlide(current);
-      }
     }
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "ArrowRight") {
-        nextSlide();
-      }
+}
 
-      if (event.key === "ArrowLeft") {
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "ArrowRight") {
+        nextSlide();
+    }
+
+    if (event.key === "ArrowLeft") {
         prevSlide();
-      }
-    });
-  </script>
+    }
+
+});
+
+</script>
 
 </body>
 </html>
